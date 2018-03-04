@@ -51,8 +51,33 @@ $(function () {
   });
 
   //2.给表单注册一个校验成功的事件， 成功的时候阻止表单的默认提交，使用ajax进行。
-  
+  $("form").on("success.form.bv", function (e) {
+    //阻止浏览器的默认行为
+    e.preventDefault();
+    //发送ajax请求登录
+    $.ajax({
+      type:'post',
+      url:'/employee/employeeLogin',
+      data:$("form").serialize(),
+      datatype:'json',
+      success:function(info) {
+        console.log(info);
+        if(info.error === 1000) {
+          //把username字段改成校验失败
+          $("form").data("bootstrapValidator").updateStatus("username", "INVALID", "callback");
+        }
+        if(info.error === 1001) {
+          $("form").data("bootstrapValidator").updateStatus("password", "INVALID", "callback");
+        }
+        if(info.success) {
+          location.href = "index.html";
+        }
+      }
+    })
+  });
 
   //3.重置表单， 清除所有的样式
-  
+  $("[type='reset']").on("click",function () {
+    $("form").data("bootstrapValidator").resetForm(true);
+  })
 });

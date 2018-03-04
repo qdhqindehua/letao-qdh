@@ -15,6 +15,8 @@
 | username | 是    | 用户名  |
 | password | 是    | 用户密码 |
 + 示例
+
+  表单序列化 $("form").serialize()
 ```javascript
 {"username":"root","password","123456"}
 ```
