@@ -12,7 +12,7 @@ $(function () {
   var option = {
     title: {
       text: '2017年注册人数'
-    },
+    }, 
     tooltip: {},
     legend: {
       data:['人数']

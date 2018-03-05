@@ -1,10 +1,15 @@
+/**
+ * Created by HUCC on 2018/3/2.
+ */
 $(function () {
-  // 基于准备好的dom，初始化echarts实例
-  var myChart1 = echarts.init(document.querySelector(".chart_1"));
-  var myChart2 = echarts.init(document.querySelector(".chart_2"));
 
-  // 指定图表的配置项和数据
-  var option1 = {
+
+  //1. 准备dom
+  var myChart = echarts.init(document.querySelector(".charts_1"));
+  var myChart2 = echarts.init(document.querySelector(".charts_2"));
+
+  //2. 准备数据
+  var option = {
     title: {
       text: '2017年注册人数'
     },
@@ -19,15 +24,15 @@ $(function () {
     series: [{
       name: '人数',
       type: 'bar',
-      data: [1000, 2000, 1500, 2700, 2200, 2500]
+      data: [1000, 2000, 3333, 600, 4000, 2444]
     }]
   };
 
   var option2 = {
-    title: {
+    title : {
       text: '热门品牌销售',
       subtext: '2017年6月',
-      x: 'center'
+      x:'center'
     },
     tooltip : {
       trigger: 'item',
@@ -62,7 +67,8 @@ $(function () {
     ]
   };
 
-  // 显示数据
-  myChart1.setOption(option1);
+  //显示数据
+  myChart.setOption(option);
   myChart2.setOption(option2);
+
 });

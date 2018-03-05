@@ -80,6 +80,7 @@ a:active {
 .lt_aside .nav a.now {
     background-color: #1d1f21;
     border-color: #069;
+    color: #fff;
 }
 
 .lt_aside .nav .second a {
@@ -111,8 +112,8 @@ a:active {
     font-size: 16px;
 }
 
-.lt_content .charts_1,
-.lt_content .charts_2 {
+.lt_content .chart_1,
+.lt_content .chart_2 {
     width: 45%;
     height: 400px;
 }
