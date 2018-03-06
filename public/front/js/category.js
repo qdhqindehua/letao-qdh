@@ -17,7 +17,10 @@ $(function () {
 
     var id = $(this).data("id");
     renderSecond(id);
-  })
+
+    //让区域滚动重新到0，0的位置
+    mui('.mui-scroll-wrapper').scroll()[1].scrollTo(0,0,300);
+  });
 
   //渲染二级分类的函数
   function renderSecond(id) {
@@ -26,7 +29,7 @@ $(function () {
       url:'/category/querySecondCategory',
       data: {id:id},
       success:function (info) {
-        console.log(info);
+        // console.log(info);
         $(".second").html(template("tempsecond", info));
       }
     })
