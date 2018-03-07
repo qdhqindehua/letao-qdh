@@ -45,7 +45,7 @@ $(function () {
       type:'GET',
       url:'/employee/employeeLogout',
       success:function (info) {
-        console.log(info);
+        // console.log(info);
         if(info.success) {
           //退出成功，才跳转到登录页
           location.href = "login.html";
@@ -60,7 +60,7 @@ $(function () {
       type:"GET",
       url:"/employee/checkRootLogin",
       success:function (info) {
-        console.log(info);
+        // console.log(info);
         //判断，info.error是否是400
         if(info.error === 400) {
           location.href = "login.html";
