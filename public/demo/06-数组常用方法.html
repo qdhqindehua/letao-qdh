@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<script>
+
+  //arr.push: 往最后加， 返回添加后的数组长度
+  //arr.pop： 最后删,    返回删除的那个元素
+  //arr.shift:最前删     返回删除的元素
+  //arr.unshift: 往前加， 返回长度
+  //arr.join:    拼接成字符串
+  //arr.slice:   截取数组的某一部分，返回一个新的数组，原数组不改变。slice(begin, end):
+  //arr.splice   拼接，  可以在任意位置删除或者增加 若干个元素。
+
+  //splice(start, deleteCount, arg1, arg2,arg3...)：  会修改原数组
+
+  var arr = ["张飞", "赵云", "马超", "关羽", "黄忠"];
+
+  //删除任意位置的元素
+  arr.splice(1, 0, "大乔", "小乔");
+
+  console.log(arr);
+
+
+</script>
+
+</body>
+</html>

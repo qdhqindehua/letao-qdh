@@ -64,13 +64,13 @@ $(function () {
 
     var index = arr.indexOf(value);
     if(index != -1){
-      arr.splice(index, 1);
+      arr.splice(index, 1);//删除元素位置，元素个数
     }
 
     if(arr.length >= 10){
-      arr.pop();
+      arr.pop();//取出数组中的最后一项
     }
-
+    //在数组最前面插入项
     arr.unshift(value);
 
     localStorage.setItem("search_list", JSON.stringify(arr));

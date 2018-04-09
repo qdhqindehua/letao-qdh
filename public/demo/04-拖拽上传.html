@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    div {
+      width: 400px;
+      height: 400px;
+      border: 1px solid #000;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+<div>请把图片直接拽进来</div>
+
+<script>
+
+  //dragover: 当拖到元素上方的时候触发
+  var div = document.querySelector("div");
+  div.addEventListener("dragover", function (e) {
+    //目的是：触发drop事件
+    e.preventDefault();
+  });
+
+  div.addEventListener("drop", function (e) {
+    //禁止浏览器打开图片
+    e.preventDefault();
+
+
+    //如果是通过input:file上传的文件:  file.files
+    //拖拽上传的图片在e.dataTransfer.files内
+    var file = e.dataTransfer.files[0];
+
+    //有文件了怎么办
+    //1. 创建FileReader实例
+    var fr = new FileReader();
+    //2. 让fr读取文件
+    fr.readAsDataURL(file);
+    //3. 等待fr读取完成
+    fr.onload = function () {
+      //4. fr读取完成
+      console.log(fr.result);
+
+      div.innerHTML = '<img src='+fr.result+'>';
+
+    }
+  })
+
+
+
+</script>
+
+</body>
+</html>

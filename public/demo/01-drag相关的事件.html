@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #box1 {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+
+    #box2 {
+      border: 1px solid #000;
+      width: 400px;
+      height: 400px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+<div id="box1" draggable="true"></div>
+<div id="box2"></div>
+<script>
+
+
+  //拖拽元素：   dragstart  drag  dragend
+  //目标元素:    dragover  drop   dragenter  dragleave
+  /*var box1 = document.querySelector("#box1");
+  box1.addEventListener("dragstart", function () {
+    console.log("拖拽开始");
+  })
+  box1.addEventListener("drag", function () {
+    console.log("拖拽移动");
+  })
+  box1.addEventListener("dragend", function () {
+    console.log("拖拽结束");
+  })*/
+
+  var box2 = document.getElementById("box2");
+  box2.addEventListener("dragover", function (e) {
+    e.preventDefault();
+    console.log("呵呵");
+  });
+
+ /* box2.addEventListener("dragenter", function (e) {
+    e.preventDefault();
+    console.log("呵呵1");
+  });*/
+
+ /* box2.addEventListener("dragleave", function (e) {
+    e.preventDefault();
+    console.log("呵呵2");
+  });*/
+
+
+  box2.addEventListener("drop", function () {
+    console.log("哈哈哈");
+  });
+
+
+</script>
+</body>
+</html>

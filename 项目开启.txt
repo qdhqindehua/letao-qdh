@@ -1,0 +1,12 @@
+1. 首先启动你mysql服务器
+
+2. 使用npm start启动项目，启动后窗口不能关闭。
+
+
+移动端商城页面访问：http://localhost:3000/mobile
+
+
+后端管理页面访问：http://localhost:3000/manage
+
+
+唯一管理员账号：root   唯一管理员密码：123456
